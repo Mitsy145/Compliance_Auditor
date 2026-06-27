@@ -8,9 +8,9 @@ A full-stack web application that lets users upload a photo of any room or space
 
 | Service | URL |
 |---|---|
-| Frontend | _Coming soon (Vercel)_ |
-| Backend API | _Coming soon (Render)_ |
-| API Docs (Swagger) | `<backend-url>/docs` |
+| Frontend | https://compliance-auditor-pied.vercel.app/ |
+| Backend API | https://compliance-auditor-api.onrender.com |
+| API Docs (Swagger) | `https://compliance-auditor-api.onrender.com/docs` |
 
 ---
 
