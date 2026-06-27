@@ -1,3 +1,41 @@
-# Environment variables
+# ===== PYTHON =====
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+build/
+dist/
+*.egg-info/
+
+# ===== ENVIRONMENT VARIABLES =====
 .env
-backend/.env
+.env.local
+.env.production
+
+# ===== DATABASE =====
+*.db
+*.sqlite3
+
+# ===== UPLOADED IMAGES =====
+uploads/
+
+# ===== NODE =====
+node_modules/
+dist/
+build/
+.vite/
+npm-debug.log*
+
+# ===== LOGS =====
+*.log
+
+# ===== IDE =====
+.vscode/
+.idea/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
