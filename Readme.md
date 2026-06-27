@@ -256,52 +256,61 @@ Fetches full details of a specific audit.
 
 ##  Project Structure
 
-```
 compliance-auditor/
+├── .gitignore                          # Git ignore rules for entire project
+├── Readme.md                           # Project documentation
 │
-├── backend/                        # FastAPI backend
+├── backend/                            # FastAPI Python backend
 │   ├── app/
-│   │   ├── main.py                 # App entry point, CORS, router registration
-│   │   ├── database.py             # SQLAlchemy engine and session setup
-│   │   ├── __init__.py             #
-│   │   ├── models.py               # AuditRecord and InterviewRecord DB models
-│   │   ├── schemas.py              # Pydantic request/response schemas
+│   │   ├── __init__.py                 # Python package marker
+│   │   ├── main.py                     # App entry point, CORS, router registration
+│   │   ├── database.py                 # SQLAlchemy engine and session setup
+│   │   ├── models.py                   # AuditRecord and InterviewRecord DB models
+│   │   ├── schemas.py                  # Pydantic request/response schemas
 │   │   ├── routers/
-│   │   │   ├── audit.py            # POST /audit/analyze — image upload + Gemini analysis
-│   │   │   ├── __init__.py         # 
-│   │   │   ├── interview.py        # GET /interview/generate, POST /interview/submit
-│   │   │   └── dashboard.py        # GET /dashboard/history, GET /dashboard/record
+│   │   │   ├── __init__.py             # Package marker
+│   │   │   ├── audit.py                # POST /audit/analyze — image upload + Gemini
+│   │   │   ├── dashboard.py            # GET /dashboard/history and /record
+│   │   │   └── interview.py            # GET /interview/generate, POST /submit
 │   │   └── services/
-│   │       ├── gemini_service.py   # All Gemini API calls (analyze, questions, scoring)
-│   │       └── __init__.py         # 
-│   │       └── audio_service.py    # Transcript cleanup utility
-│   ├── uploads/                    # Uploaded room images (auto-created)
-│   ├── compliance.db               # SQLite database (auto-created on first run)
-│   ├── .env                        # API keys and config (not committed)
-│   └── requirements.txt            # Python dependencies
+│   │       ├── __init__.py             # Package marker
+│   │       ├── audio_service.py        # Transcript cleanup utility
+│   │       └── gemini_service.py       # All Gemini API calls (analyze, questions, scoring)
+│   ├── uploads/                        # Uploaded room images (auto-created, git ignored)
+│   ├── venv/                           # Python virtual environment (git ignored)
+│   ├── .env                            # API keys and config (git ignored)
+│   ├── compliance.db                   # SQLite database (auto-created on first run)
+│   └── requirements.txt                # Python dependencies
 │
-└── frontend/                       # React + Vite frontend
+└── frontend/                           # React + Vite frontend
+    ├── node_modules/                   # Node dependencies (git ignored)
     ├── src/
-    │   ├── pages/
-    │   │   ├── Home.jsx            # Upload form + standard selection
-    │   │   ├── Results.jsx         # Score, gaps, action plan display
-    │   │   ├── Interview.jsx       # Voice interview with STT + TTS
-    │   │   └── DashboardPage.jsx   # Score history + stats
     │   ├── components/
-    │   │   ├── ResultCard.jsx      # Score circle + gaps list
-    │   │   ├── ActionPlan.jsx      # Numbered action steps
-    │   │   ├── Dashboard.jsx       # Bar chart + audit history table
-    │   │   └── VoiceInterview.jsx  # Reserved for reusable voice UI
+    │   │   ├── ActionPlan.jsx          # Numbered AI-generated action steps
+    │   │   ├── Dashboard.jsx           # Bar chart + audit history table
+    │   │   ├── ResultCard.jsx          # Score circle + gaps list
+    │   │   ├── UploadForm.jsx          # Reserved upload form component
+    │   │   └── VoiceInterview.jsx      # Reserved reusable voice UI component
+    │   ├── pages/
+    │   │   ├── DashboardPage.jsx       # Score history + stats page
+    │   │   ├── Home.jsx                # Upload form + standard selection
+    │   │   ├── Interview.jsx           # Full voice interview with STT + TTS
+    │   │   └── Results.jsx             # Score, gaps, action plan display
     │   ├── services/
-    │   │   └── api.js              # Axios API calls to backend
-    │   ├── App.jsx                 # Router + navbar
-    │   └── main.jsx                # React entry point
-    ├── tailwind.config.js
-    ├── postcss.config.js
-    └── vite.config.js
-```
-
----
+    │   │   └── api.js                  # Axios API calls to backend
+    │   ├── App.css                     # Global app styles
+    │   ├── App.jsx                     # Router setup + navbar
+    │   ├── index.css                   # Tailwind base imports
+    │   └── main.jsx                    # React DOM entry point
+    ├── .gitignore                      # Frontend specific ignores
+    ├── .oxlintrc.json                  # Oxlint config (fast JS linter)
+    ├── index.html                      # HTML entry point for Vite
+    ├── package-lock.json               # Locked dependency versions
+    ├── package.json                    # Node dependencies and scripts
+    ├── postcss.config.js               # PostCSS config for Tailwind
+    ├── README.md                       # Project documentation
+    ├── tailwind.config.js              # Tailwind CSS configuration
+    └── vite.config.js                  # Vite bundler configuration
 
 ##  Next Steps
 
