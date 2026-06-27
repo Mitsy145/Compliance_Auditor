@@ -275,12 +275,3 @@ Fetches full details of a specific audit.
 
 ---
 
-##  Author
-
-**Meenakshi Joshi **
-- GitHub: [github.com/Mitsy145](https://github.com/Mitsy145)
-- LinkedIn: [linkedin.com/in/meenakshi-joshi-422070311](https://linkedin.com/in/meenakshi-joshi-422070311)
-
----
-
-*Built as a take-home assessment for Jaimini Group — NQAS.ai*
