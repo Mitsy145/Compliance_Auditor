@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Results from './pages/Results'
 import Interview from './pages/Interview'
@@ -10,12 +10,12 @@ function App() {
       <div className="min-h-screen bg-slate-900 text-slate-100">
         <nav className="bg-slate-800 border-b border-slate-700 px-6 py-4">
           <div className="max-w-6xl mx-auto flex items-center justify-between">
-            <a href="/" className="text-xl font-bold text-blue-400">
+            <Link to="/" className="text-xl font-bold text-blue-400">
               🏛️ Compliance Auditor
-            </a>
+            </Link>
             <div className="flex gap-6">
-              <a href="/" className="text-slate-300 hover:text-white transition">Audit</a>
-              <a href="/dashboard" className="text-slate-300 hover:text-white transition">Dashboard</a>
+              <Link to="/" className="text-slate-300 hover:text-white transition">Audit</Link>
+              <Link to="/dashboard" className="text-slate-300 hover:text-white transition">Dashboard</Link>
             </div>
           </div>
         </nav>
